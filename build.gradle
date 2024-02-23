@@ -1,0 +1,61 @@
+apply plugin: 'java'
+
+repositories{
+    mavenCentral()
+}
+
+dependencies{
+	testImplementation 'junit:junit:4.12'
+    implementation 'org.apache.logging.log4j:log4j-api:2.13.3'
+    implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
+}
+
+task createDDLMySQL(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "CreateDDLMySQL"
+}
+
+task edgeConnector(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "EdgeConnector"
+}
+
+task edgeConvertCreateDDL(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "EdgeConvertCreateDDL"
+}
+
+task edgeConvertFileParser(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "EdgeConvertFileParser"
+}
+
+task edgeConvertGUI(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "EdgeConvertGUI"
+}
+
+task edgeField(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "EdgeField"
+}
+
+task edgeTable(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "EdgeTable"
+}
+
+task exampleFileFilter(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "ExampleFileFilter"
+}
+
+task runEdgeConvert(type: JavaExec){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "RunEdgeConvert"
+}
+
+task edgeConnectorTest(type: JavaExec){
+    classpath = sourceSets.test.runtimeClasspath
+    main = "EdgeConnectorTest"
+}
